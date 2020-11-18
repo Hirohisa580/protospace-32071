@@ -28,3 +28,5 @@
 | text (text型, NOT NULL)          |
 | user (reference型)               |
 | prototype (reference型)          |
+
+
