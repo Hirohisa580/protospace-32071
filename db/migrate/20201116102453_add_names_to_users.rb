@@ -6,3 +6,5 @@ class AddNamesToUsers < ActiveRecord::Migration[6.0]
     add_column :users, :position, :text,     null: false
   end
 end
+
+

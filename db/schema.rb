@@ -44,9 +44,9 @@ ActiveRecord::Schema.define(version: 2020_11_17_151546) do
   end
 
   create_table "prototypes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "title"
-    t.text "catch_copy"
-    t.text "concept"
+    t.string "title", null: false
+    t.text "catch_copy", null: false
+    t.text "concept", null: false
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -61,13 +61,14 @@ ActiveRecord::Schema.define(version: 2020_11_17_151546) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "name"
-    t.string "profile"
-    t.text "occupation"
-    t.text "position"
+    t.string "name", null: false
+    t.string "profile", null: false
+    t.text "occupation", null: false
+    t.text "position", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "prototypes", "users"
 end
